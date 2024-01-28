@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="styles.css" />
+		<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x.icon" /> -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;500&family=Baskervville&display=swap" rel="stylesheet" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+
+		<link rel="icon" href="./img/favicon.png" type="image/png" />
+		<title>Zuriñe Galán portfolio</title>
+	</head>
+	<body>
+		<header>
+			<div class="lan">
+				<button class="EUS" id="btn_EUS"></button>
+				<button class="ES bw" id="btn_ES"></button>
+				<button class="EN" id="btn_EN"></button>
+			</div>
+			<nav class="navBar">
+				<ul>
+					<li><a id="nb1" href="#about" class="navBarLink" id="homeLink">Inicio</a></li>
+					<li><a id="nb2" href="#projects" class="navBarLink" id="projectsLink">Proyectos</a></li>
+					<li><a id="nb3" href="#skills" class="navBarLink" id="skillsLink">Habilidades</a></li>
+					<li><a id="nb4" href="#contact" class="navBarLink" id="contactLink">Contacto</a></li>
+				</ul>
+			</nav>
+			<div class="darkMode" id="darkMode">
+				<i class="fa-solid fa-certificate sun"></i>
+				<i class="fa-solid fa-moon moon"></i>
+			</div>
+		</header>
+		<!-- contenedor principal -->
+		<main>
+			<section class="about" id="about">
+				<div class="abt_header">
+					<div class="img"></div>
+					<div class="name">
+						<h1>Zuriñe</h1>
+						<h1 class="sub">Galán Estefanía</h1>
+
+						<h2 id="abt_t">Desarrolladora web</h2>
+						<div class="btn_cont">
+							<button id="expandButton">
+								<i data-lucide="x" class="btn_x" aria-label="expandir/contraer información"></i></button
+							><span id="showMore">Ver más</span><span id="showLess">Cerrar</span>
+						</div>
+					</div>
+				</div>
+				<div class="abt_extended" id="abt_ext">
+					<p id="abt_ext_p1">Desarrolladora full stack e ingeniera técnica aeronáutica con una sólida trayectoria en la industria del transporte aéreo.</p>
+					<p id="abt_ext_p2">Durante los años que dediqué a la gestión del mantenimiento de aeronaves, comencé a interesarme por la programación automatizando tareas con Visual Basic y y SQL.</p>
+					<p id="abt_ext_p3">Acostumbrada a trabajar bajo los altos estándares de calidad aplicables a la aviación, he decidido emprender un nuevo camino en el mundo de la programación web.</p>
+					<p id="abt_ext_p4">Con mi habilidad para abordar desafíos técnicos y mi atención al detalle, estoy lista para aplicar mis conocimientos previos en esta emocionante industria en constante evolución.</p>
+				</div>
+			</section>
+
+			<section class="projects" id="projects">
+				<h2 id="pro_t">Mis proyectos</h2>
+				<div class="separator contrast1"></div>
+				<div class="slider">
+					<button class="btn prev-btn" id="btnPrev"><i class="fa-solid fa-chevron-left"></i></button>
+					<ul class="slider-container" id="sliderItemList"></ul>
+
+					<button class="btn next-btn" id="btnNext"><i class="fa-solid fa-chevron-right"></i></button>
+				</div>
+			</section>
+
+			<section class="skills" id="skills">
+				<h2 id="skill_t">Habilidades técnicas</h2>
+				<div class="separator contrast1"></div>
+
+				<div class="skill_container">
+					<div class="front_header">
+						<h3>Front end</h3>
+					</div>
+					<div class="front">
+						<img title="HMTL5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="logo de html5" />
+
+						<img title="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="logo de css" />
+
+						<img title="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="logo de javascript" />
+
+						<i id="jqueryIcon" title="JQuery" class="devicon-jquery-plain-wordmark colored" aria-label="logo de JQuery"></i>
+
+						<img title="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="logo de typescript" />
+
+						<img title="Angular" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="logo de angular" />
+
+						<img title="Bootstrap" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="logo de bootstrap" />
+					</div>
+					<div class="back_header">
+						<h3>Back end</h3>
+					</div>
+					<div class="back">
+						<i id="nodeIcon" title="Node JS" class="devicon-nodejs-plain" aria-label="logo de node js"></i>
+
+						<img title="mySQL" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" class="bigger" alt="logo de my SQL" />
+
+						<img title="Mongo DB" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-plain-wordmark.svg" />
+					</div>
+					<div class="aux_header">
+						<h3 id="skill_aux">Tecnologías auxiliares</h3>
+					</div>
+					<div class="aux">
+						<img title="GIT" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="logo de git" />
+
+						<i title="GitHub" class="devicon-github-original" aria-label="logo de github"></i>
+
+						<img src="./img/Postman_(software).png" alt="logo de Postman" title="Postman" />
+
+						<img title="Google Cloud" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="logo de google cloud" />
+
+						<img title="Amazon Web Services" id="awsIcon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="bigger" alt="logo de amazon web services" />
+
+						<img title="Figma" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="logo de figma" />
+
+						<img id="vercelIcon" src="./img/Vercel_logo_black.png" alt="logo de Vercel" title="Vercel" />
+					</div>
+				</div>
+			</section>
+			<section class="contact" id="contact">
+				<h2 id="contact_t">Ponte en contacto</h2>
+				<div class="separator contrast2"></div>
+				<div class="grid_container">
+					<p id="contact_p1">Puedes contactar conmigo a través de los siguientes medios:</p>
+					<div class="mail contactLine"><i class="fa-solid fa-envelope"></i><a href="mailto:zurigales@gmail.com">zurigales@gmail.com</a></div>
+					<div class="phone contactLine"><i class="fa-solid fa-phone"></i><span>+34 685 716 755</span></div>
+					<p id="contact_p2">¿Quieres saber más? Consulta mis perfiles de LinkedIn y GitHub...</p>
+					<div class="linkedin contactLine"><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/zgalan/" target="_blank">linkedin.com/in/zgalan</a></div>
+					<div class="github contactLine"><i class="fa-brands fa-github"></i><a href="https://github.com/ZuriGE" target="_blank">github.com/ZuriGE</a></div>
+					<p id="contact_p3">...o descarga directamente mi curriculum.</p>
+					<button class="cv" id="btnCV"><i class="fa-solid fa-download"></i></button>
+				</div>
+			</section>
+		</main>
+		<script src="https://unpkg.com/lucide@latest"></script>
+		<script>
+			lucide.createIcons();
+		</script>
+		<script src="scriptFontAwesome.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
