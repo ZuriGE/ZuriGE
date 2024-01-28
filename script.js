@@ -6,28 +6,35 @@ const loadProjects = (lan) => {
 	//Array de proyectos
 	let projectArray = [
 		{
-			title: ["proyecto1", "project1", "1 proiektua"],
-			desc: ["descripción en castellano", "description in english", "azalpena euskeraz"],
+			title: ["HiRun", "HiRun", "HiRun"],
+			desc: ["Proyecto final del curso en Codenotch, web de publicación y búsqueda de servicios profesionales por zona. Incluye calendario integrado, gestión de reservas, geolocalización, chat entre usuarios y muchas más funcionalidades.", "Programming course final project in Codenotch, website  publishing and searching  professional services by area. It includes features such as integrated calendar, reservation management, geolocation, and chat between users.", "Programazio kurtsoko amaierako proiektu gisa garatu da HiRun, erabiltzaileek beren inguruan  zerbitzu profesionalak argitaratu eta bilatzeko web orria. Egutegi integratua, erreserben kudeaketa, geolokalizazioa, erabiltzaileen arteko txata eta halako funtzionalitate gehiago ditu."],
+			img: "./img/HiRun.jpg",
+			stack: ["html", "css", "ts", "angular", "node", "sql", "aws", "googleCloud"],
+		},
+		{
+			title: ["myBooks", "myBooks", "myBooks"],
+			desc: ["Página de compraventa de libros. Desarrollada para practicar la implementación de una base de datos local en una aplicación de angular.", "Book buying and selling page. Developed to practice implementing a local database in an Angular application.", "Liburuak salerosteko orria. Angular aplikazio batean datu-base lokal baten ezarpetan ikasteko garatua."],
+			img: "./img/myBooks.jpg",
+			stack: ["html", "css", "ts", "angular", "node", "sql"],
+		},
+
+		{
+			title: ["3 en raya", "Tic-tac-toe", "Hirutan hiru"],
+			desc: ["El juego de toda la vida. Dos modos: multijugador o tú contra la máquina. ¿Crees que puedes vencer a la IA?", "The old game. Two modes: multiplayer or you against the machine. Can beat the AI?", "Betiko artzai jokoa. Bi modu: jokalari anitzekoa edo zu makinaren aurka. IAri irabazteko gai izango al zara?"],
+			img: "./img/3enraya.jpg",
+			stack: ["html", "css", "js"],
+		},
+		{
+			title: ["Simon dice", "Simon Says", "Tximunek dio"],
+			desc: ["El clásico juego de la infancia ahora en tu PC. Con un estética retro para una experiencia más inmersiva.", "The classic childhood game now in your computer. With a retro aesthetic for a more immersive experience.", "Haurtzaroko jolas klasikoa, orain zure ordenagailuan. Estetika retro batekin, esperientzia mulgilgarriago bat lortzeko."],
 			img: "./img/simon.jpg",
 			stack: ["html", "css", "js"],
 		},
 		{
-			title: ["proyecto2", "project2", "2 proiektua"],
-			desc: ["descripción en castellano2", "description in english2", "azalpena euskeraz2"],
-			img: "./img/img2.png",
-			stack: ["html", "css", "js"],
-		},
-		{
-			title: ["proyecto3", "project1", "1 proiektua"],
-			desc: ["descripción en castellano", "description in english", "azalpena euskeraz"],
-			img: "./img/simon.jpg",
-			stack: ["html", "css", "js"],
-		},
-		{
-			title: ["proyecto4", "project2", "2 proiektua"],
-			desc: ["descripción en castellano2", "description in english2", "azalpena euskeraz2"],
-			img: "./img/img2.png",
-			stack: ["html", "css", "js"],
+			title: ["Pokédex", "Pokédex", "Pokédex"],
+			desc: ["Desarrollada como ejercicio para llamar a una API externa y mostrar los resultados en un front maquetado de acuerdo a la temática pokemon", "Developed as an exercise to call an external API and show the results in a front layout related to the pokemon theme", "Ariketa gisa garatu da, kanpoko API bati deitzeko eta emaitzak gaiaren arabera maketatutako front batean erakusteko"],
+			img: "./img/pokeapi.jpg",
+			stack: ["html", "css", "js", "node"],
 		},
 	];
 
@@ -77,10 +84,16 @@ const loadProjects = (lan) => {
 					iconClass = "devicon-mongodb-plain colored";
 					break;
 				case "aws":
-					iconClass = "devicon-amazonwebservices-plain-wordmark colored";
+					iconClass = "devicon-amazonwebservices-original colored";
 					break;
 				case "git":
 					iconClass = "devicon-git-plain colored";
+					break;
+				case "googleCloud":
+					iconClass = "devicon-googlecloud-plain colored";
+					break;
+				case "node":
+					iconClass = "devicon-nodejs-plain colored";
 					break;
 			}
 			// Aquí puedes personalizar los íconos según las tecnologías en el stack
