@@ -699,7 +699,7 @@ img.bigger {
 
 .grid_container {
     display: grid;
-    grid-template-areas: 'p1 p1 p1 p1' '. mail tel .' 'p2 p2 p2 p2' '.link gh.' 'p3 p3 p3 p3' '. cv cv .';
+    grid-template-areas: 'p1 p1 p1 p1' '. mail mail .' 'p2 p2 p2 p2' '.link gh.' 'p3 p3 p3 p3' '. cv cv .';
     gap: 2rem;
 }
 
@@ -722,6 +722,7 @@ img.bigger {
     padding: 0.5rem;
     display: flex;
     align-items: center;
+    text-align: center;
 }
 
 #contact_p1 {
@@ -741,7 +742,7 @@ img.bigger {
 
 .contactLine.mail {
     grid-area: mail;
-    justify-self: end;
+    justify-self: center;
 }
 
 .contactLine.phone {
