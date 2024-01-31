@@ -2,6 +2,7 @@
 
 const loadProjects = (lan) => {
 	$("#sliderItemList").html("");
+	$("#sliderDots").html("");
 
 	//Array de proyectos
 	let projectArray = [
@@ -25,7 +26,7 @@ const loadProjects = (lan) => {
 			stack: ["html", "css", "js"],
 		},
 		{
-			title: ["Simon dice", "Simon Says", "Tximunek dio"],
+			title: ["Simón dice", "Simon Says", "Tximunek dio"],
 			desc: ["El clásico juego de la infancia ahora en tu PC. Con un estética retro para una experiencia más inmersiva.", "The classic childhood game now in your computer. With a retro aesthetic for a more immersive experience.", "Haurtzaroko jolas klasikoa, orain zure ordenagailuan. Estetika retro batekin, esperientzia mulgilgarriago bat lortzeko."],
 			img: "./img/simon.jpg",
 			stack: ["html", "css", "js"],
@@ -40,12 +41,12 @@ const loadProjects = (lan) => {
 
 	$.each(projectArray, (i, project) => {
 		//iconos para mapear
-		let newP = $("<li>").addClass("card");
+		let newP = $("<div>").addClass("cardSlider").addClass("carousel-item");
 
 		//parte superior
 		let cardImg = $("<div>")
 			.addClass("cardImage")
-			.css("background", `linear-gradient(0deg,var(--cardGrad), var(--cardGrad) 20%, transparent), url('${project.img}')center/cover`)
+			.css("background", `linear-gradient(0deg,var(--cardGrad), var(--cardGrad) 20%, transparent), url('${project.img}')center top/100%`)
 			.append($("<h2>").attr("id", `p${i}_t`).text(project.title[lan]));
 
 		//parte inferior con el resto de info
@@ -55,56 +56,99 @@ const loadProjects = (lan) => {
 
 		$.each(project.stack, (i, tech) => {
 			let iconClass;
+			let ariaLabel;
 			switch (tech) {
 				case "angular":
 					iconClass = "devicon-angularjs-plain colored";
+					ariaLabel = "Angular";
+
 					break;
 				case "html":
 					iconClass = "devicon-html5-plain colored";
+					ariaLabel = "HTML5";
+
 					break;
 				case "css":
 					iconClass = "devicon-css3-plain colored";
+					ariaLabel = "CSS3";
+
 					break;
 				case "js":
 					iconClass = "devicon-javascript-plain colored";
+					ariaLabel = "Javascript";
+
 					break;
 				case "ts":
 					iconClass = "devicon-typescript-plain colored";
+					ariaLabel = "Typescript";
+
 					break;
 				case "sql":
-					iconClass = "devicon-mysql-plain colored";
+					iconClass = "devicon-mysql-plain";
+					ariaLabel = "MySQL";
+
 					break;
 				case "jquery":
 					iconClass = "devicon-jquery-plain-wordmark colored";
+					ariaLabel = "JQuery";
+
 					break;
 				case "bootstrap":
 					iconClass = "devicon-bootstrap-plain colored";
+					ariaLabel = "Bootstrap";
+
 					break;
 				case "mongo":
 					iconClass = "devicon-mongodb-plain colored";
+					ariaLabel = "MongoDB";
+
 					break;
 				case "aws":
 					iconClass = "devicon-amazonwebservices-original colored";
+					ariaLabel = "Amazon Web Services";
+
 					break;
 				case "git":
 					iconClass = "devicon-git-plain colored";
+					ariaLabel = "Git";
+
 					break;
 				case "googleCloud":
 					iconClass = "devicon-googlecloud-plain colored";
+					ariaLabel = "Google Cloud";
+
 					break;
 				case "node":
 					iconClass = "devicon-nodejs-plain colored";
+					ariaLabel = "NodeJS";
+
 					break;
 			}
 			// Aquí puedes personalizar los íconos según las tecnologías en el stack
-			let icon = $("<i>").addClass(iconClass, "cardIcon");
+			let icon = $("<i>").addClass(iconClass, "cardIcon").attr("aria-label", ariaLabel).attr("title", ariaLabel);
+
 			cardInfo.append(icon);
 		});
 		cardImg.append(cardInfo);
 		newP.append(cardImg);
 
 		$("#sliderItemList").append(newP);
+
+		let newB = $("<button>", {
+			type: "button",
+			class: "sliderDot",
+			"data-bs-target": "#projectSlider",
+			"data-bs-slide-to": i,
+			"aria-label": `Slide ${i + 1}`,
+		});
+
+		if (i == 0) {
+			newB.addClass("active").attr("aria-current", "true");
+		}
+
+		$("#sliderDots").append(newB);
 	});
+	$(".carousel-item").eq(0).addClass("active");
 };
 
 $(document).ready(() => {
@@ -112,26 +156,39 @@ $(document).ready(() => {
 	btn_ES.on("click", () => {
 		changeLng(0);
 	});
+	btn_ES_m.on("click", () => {
+		changeLng(0);
+	});
 
 	btn_EN.on("click", () => {
+		changeLng(1);
+	});
+	btn_EN_m.on("click", () => {
 		changeLng(1);
 	});
 
 	btn_EUS.on("click", () => {
 		changeLng(2);
 	});
+	btn_EUS_m.on("click", () => {
+		changeLng(2);
+	});
 
-	//links navBar
-	$("nav a").click(function () {
-		// Evitar el comportamiento predeterminado del enlace
+	//menu hamburguesa para móvil
+	$("#burgerNav").click(function () {
+		$("#burgerIcon").toggleClass("open");
+		$("#header").toggleClass("ddListClosed");
+		$("#ddList").slideToggle();
+	});
+
+	$(".ddList a").click(function () {
+		console.log("hamburguesa");
 		event.preventDefault();
 
-		// Obtener el ID del elemento de destino
-		var target = $(this).attr("href");
+		let target = $(this).attr("href");
+		$("#burgerNav").trigger("click");
+		let offset;
 
-		var offset;
-
-		// Verificar si es el primer enlace
 		if ($(this).parent().index() === 0) {
 			// Restar 150px para el primer enlace
 			offset = $(target).offset().top - 150;
@@ -140,13 +197,36 @@ $(document).ready(() => {
 			offset = $(target).offset().top - 100;
 		}
 
-		// Realizar un desplazamiento suave hasta la posición calculada
 		$("html, body").animate(
 			{
 				scrollTop: offset,
 			},
-			1000
-		); // Duración del desplazamiento en milisegundos
+			700
+		);
+	});
+
+	//links navBar
+	$("navBar a").click(function () {
+		console.log("normal");
+		event.preventDefault();
+		let target = $(this).attr("href");
+
+		let offset;
+
+		if ($(this).parent().index() === 0) {
+			// Restar 150px para el primer enlace
+			offset = $(target).offset().top - 150;
+		} else {
+			// Restar 100px para los otros enlaces
+			offset = $(target).offset().top - 100;
+		}
+
+		$("html, body").animate(
+			{
+				scrollTop: offset,
+			},
+			700
+		);
 	});
 });
 //idioma
@@ -154,12 +234,20 @@ $(document).ready(() => {
 const btn_ES = $("#btn_ES");
 const btn_EN = $("#btn_EN");
 const btn_EUS = $("#btn_EUS");
+const btn_ES_m = $("#btn_ES_m");
+const btn_EN_m = $("#btn_EN_m");
+const btn_EUS_m = $("#btn_EUS_m");
 //variabels de todos los textos
 //navbar
 const nb1 = $("#nb1");
 const nb2 = $("#nb2");
 const nb3 = $("#nb3");
 const nb4 = $("#nb4");
+//menú hamburguesa
+const hb1 = $("#hb1");
+const hb2 = $("#hb2");
+const hb3 = $("#hb3");
+const hb4 = $("#hb4");
 //about
 const abt_t = $("#abt_t");
 const abt_p1 = $("#abt_ext_p1");
@@ -182,22 +270,22 @@ const contact_p3 = $("#contact_p3");
 
 const nb1_trad = ["Inicio", "Home", "Hasiera"];
 const nb2_trad = ["Proyectos", "Projects", "Proiektuak"];
-const nb3_trad = ["Habilidades", "Skills", "Gaitasunak"];
+const nb3_trad = ["Stack", "Stack", "Stack-a"];
 const nb4_trad = ["Contacto", "Contact info", "Kontaktua"];
 const abt_t_trad = ["Desarrolladora web", "Web developer", "Web garaitzalea"];
-const abt_p1_trad = ["Desarrolladora full stack e ingeniera técnica aeronáutica con una sólida trayectoria en la industria del transporte aéreo.", "Full stack  developer and aerospace engineer with a solid track record in the air transportation industry.", "Full stack garatzaile eta ingeniari tekniko aeronautikoa, aire-garraioaren industrian ibilbide sendokoa."];
+const abt_p1_trad = ["Desarrolladora full stack e ingeniera técnica aeronáutica con una sólida trayectoria en la industria del transporte aéreo.", "Full stack  developer and aerospace engineer with a solid track record in the air transportation industry.", "Full stack garatzaile eta ingeniari tekniko aeronautikoa, abiazioaren industrian ibilbide sendokoa."];
 const abt_p2_trad = ["Durante los años que dediqué a la gestión del mantenimiento de aeronaves, comencé a interesarme por la programación automatizando tareas con Visual Basic y y SQL.", "During the years I dedicated to aircraft maintenance management, I became interested in programming by automating tasks with Visual Basic and SQL.", "Hegazkinen mantentze-lanen kudeaketan lan egiten nuela, programazioaz arduratzen hasi nintzen, Visual Basic eta SQL bidez lanak automatizatuz."];
 const abt_p3_trad = ["Acostumbrada a trabajar bajo los altos estándares de calidad aplicables a la aviación, he decidido emprender un nuevo camino en el mundo de la programación web.", "Used to working under the high quality standards applicable to aviation, I decided to starts a new path in the world of web programming.", "Abiazioari aplika dakizkiokeen kalitate estandar altuekin lan egiten ohituta, bide berri bati ekitea erabaki dut web programazioaren arloan."];
 const abt_p4_trad = ["Con mi habilidad para abordar desafíos técnicos y mi atención al detalle, estoy lista para aplicar mis conocimientos previos en esta emocionante industria en constante evolución.", "With my ability to address technical challenges and my attention to detail, I'm ready to use my prior knowledge in this exciting, ever-evolving industry.", "Erronka teknikoei ekiteko eta xehetasunei arreta jartzeko daukadan trebeziarekin, prest nago etengabe aldatzen ari den industria zirraragarri honetan nire ezagutzak aplikatzeko."];
 const showMore_trad = ["Ver más", "Show more", "Gehiago ikusi"];
 const showLess_trad = ["Cerrar", "Close", "Itxi"];
 const pro_t_trad = ["Mis proyectos", "My projects", "Nire proiektuak"];
-const skill_t_trad = ["Habilidades técnicas", "Technical skills", "Gaitasun teknikoak"];
+const skill_t_trad = ["Stack técnico", "Technical stack", "Stack teknikoa"];
 const skill_aux_trad = ["Tecnologías auxiliares", "Auxiliary technologies", "Bestelako teknologiak"];
 const contact_t_trad = ["Ponte en contacto", "Get in touch", "Harremanetan jarri"];
 const contact_p1_trad = ["Puedes contactar conmigo a través de los siguientes medios:", "You can contact me through the following means:", "Nirekin kontaktatzeko, bide hauek dituzu:"];
 const contact_p2_trad = ["¿Quieres saber más? Consulta mis perfiles de LinkedIn y GitHub...", "Need more information? Check out my LinkedIn and GitHub profiles...", "Gehiago jakin nahi? Bisita itzazu nire LinkedIn el GitHub-eko profilak..."];
-const contact_p3_trad = ["...o descarga directamente mi curriculum ", "... or just download my résumé", "... edo zuzenean jeitsi nire curriculuma"];
+const contact_p3_trad = ["...o descarga directamente mi curriculum ", "... or just download my cv", "... edo zuzenean jeitsi nire curriculuma"];
 let currentLang = 0;
 let darkMode = false;
 
@@ -234,26 +322,38 @@ changeLng = (language) => {
 		case currentLang === 0 && language === 1:
 			btn_ES.toggleClass("bw");
 			btn_EN.toggleClass("bw");
+			btn_ES_m.toggleClass("bw");
+			btn_EN_m.toggleClass("bw");
 			break;
 		case currentLang === 0 && language === 2:
 			btn_ES.toggleClass("bw");
 			btn_EUS.toggleClass("bw");
+			btn_ES_m.toggleClass("bw");
+			btn_EUS_m.toggleClass("bw");
 			break;
 		case currentLang === 1 && language === 0:
 			btn_ES.toggleClass("bw");
 			btn_EN.toggleClass("bw");
+			btn_ES_m.toggleClass("bw");
+			btn_EN_m.toggleClass("bw");
 			break;
 		case currentLang === 1 && language === 2:
 			btn_EN.toggleClass("bw");
 			btn_EUS.toggleClass("bw");
+			btn_EN_m.toggleClass("bw");
+			btn_EUS_m.toggleClass("bw");
 			break;
 		case currentLang === 2 && language === 0:
 			btn_ES.toggleClass("bw");
 			btn_EUS.toggleClass("bw");
+			btn_ES_m.toggleClass("bw");
+			btn_EUS_m.toggleClass("bw");
 			break;
 		case currentLang === 2 && language === 1:
 			btn_EN.toggleClass("bw");
 			btn_EUS.toggleClass("bw");
+			btn_EN_m.toggleClass("bw");
+			btn_EUS_m.toggleClass("bw");
 			break;
 	}
 
@@ -263,6 +363,10 @@ changeLng = (language) => {
 	nb2.text(nb2_trad[language]);
 	nb3.text(nb3_trad[language]);
 	nb4.text(nb4_trad[language]);
+	hb1.text(nb1_trad[language]);
+	hb2.text(nb2_trad[language]);
+	hb3.text(nb3_trad[language]);
+	hb4.text(nb4_trad[language]);
 	abt_t.text(abt_t_trad[language]);
 	abt_p1.text(abt_p1_trad[language]);
 	abt_p2.text(abt_p2_trad[language]);
@@ -306,22 +410,7 @@ expandButton.on("click", () => {
 	expandButton.toggleClass("activo");
 });
 
-// //botones slider
-const btnPrev = $("#btnPrev");
-const btnNext = $("#btnNext");
-
-btnPrev.on("click", () => {
-	let projectCards = $(".card");
-	projectCards.last().detach().prependTo(".slider-container");
-});
-
-btnNext.on("click", () => {
-	// Selecciona todos los elementos de la tarjeta
-	let projectCards = $(".card");
-
-	// Mueve el primer elemento al final con animación
-	projectCards.first().detach().appendTo(".slider-container");
-});
+// // //botones slider
 
 //boton CV
 
@@ -335,4 +424,16 @@ btnCV.on("click", () => {
 		cvUrl = cvUrl + ".pdf";
 	}
 	window.open(cvUrl, "_blank");
+});
+
+//copiar mail
+$("#copyMail").on("click", async () => {
+	navigator.clipboard
+		.writeText("zurigales@gmail.com")
+		.then(() => {
+			$("#validFeedback").fadeToggle();
+		})
+		.catch((err) => {
+			$("#invalidFeedback").fadeToggle();
+		});
 });
