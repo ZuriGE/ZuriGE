@@ -1138,15 +1138,26 @@ img.bigger {
         overflow: ellipsis;
         word-wrap: break-word
     }
-}
-
-@media (max-width:560px) {
 
     .front_header,
     .back_header,
     .aux_header {
         justify-content: center;
+
     }
+
+    .front_header h3,
+    .back_header h3,
+    .aux_header h3 {
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
+
+
+}
+
+@media (max-width:560px) {
+
 
     .skill_container img,
     .skill_container i {

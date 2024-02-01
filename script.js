@@ -22,13 +22,13 @@ const loadProjects = (lan) => {
 
 		{
 			title: ["3 en raya", "Tic-tac-toe", "Hirutan hiru"],
-			desc: ["El juego de toda la vida. Dos modos: multijugador o tú contra la máquina. ¿Crees que puedes vencer a la IA?", "The old game. Two modes: multiplayer or you against the machine. Can beat the AI?", "Betiko artzai jokoa. Bi modu: jokalari anitzekoa edo zu makinaren aurka. IAri irabazteko gai izango al zara?"],
+			desc: ["El juego de toda la vida. Dos modos: multijugador o tú contra la máquina. ¿Crees que puedes vencer a la IA?", "The old game. Two modes: multiplayer or you against the machine. Can you beat the AI?", "Betiko artzai jokoa. Bi modu: jokalari anitzekoa edo zu makinaren aurka. IAri irabazteko gai izango al zara?"],
 			img: "./img/3enraya.jpg",
 			stack: ["html", "css", "js"],
 		},
 		{
 			title: ["Simón dice", "Simon Says", "Tximunek dio"],
-			desc: ["El clásico juego de la infancia ahora en tu PC. Con un estética retro para una experiencia más inmersiva.", "The classic childhood game now in your computer. With a retro aesthetic for a more immersive experience.", "Haurtzaroko jolas klasikoa, orain zure ordenagailuan. Estetika retro batekin, esperientzia mulgilgarriago bat lortzeko."],
+			desc: ["El clásico juego de la infancia ahora en tu PC. Con un estética retro para una experiencia más inmersiva.", "The classic children's game now in your computer. With a retro aesthetic for a more immersive experience.", "Haurtzaroko jolas klasikoa, orain zure ordenagailuan. Estetika retro batekin, esperientzia mulgilgarriago bat lortzeko."],
 			img: "./img/simon.jpg",
 			stack: ["html", "css", "js"],
 			link: "https://htmlpreview.github.io/?https://github.com/ZuriGE/Maquetacion/blob/main/simon/simon.html",
@@ -277,10 +277,10 @@ const nb1_trad = ["Inicio", "Home", "Hasiera"];
 const nb2_trad = ["Proyectos", "Projects", "Proiektuak"];
 const nb3_trad = ["Stack", "Stack", "Stack-a"];
 const nb4_trad = ["Contacto", "Contact info", "Kontaktua"];
-const abt_t_trad = ["Desarrolladora web", "Web developer", "Web garaitzalea"];
+const abt_t_trad = ["Desarrolladora web", "Web developer", "Web garatzailea"];
 const abt_p1_trad = ["Desarrolladora full stack e ingeniera técnica aeronáutica con una sólida trayectoria en la industria del transporte aéreo.", "Full stack  developer and aerospace engineer with a solid track record in the air transportation industry.", "Full stack garatzaile eta ingeniari tekniko aeronautikoa, abiazioaren industrian ibilbide sendokoa."];
-const abt_p2_trad = ["Durante los años que dediqué a la gestión del mantenimiento de aeronaves, comencé a interesarme por la programación automatizando tareas con Visual Basic y y SQL.", "During the years I dedicated to aircraft maintenance management, I became interested in programming by automating tasks with Visual Basic and SQL.", "Hegazkinen mantentze-lanen kudeaketan lan egiten nuela, programazioaz arduratzen hasi nintzen, Visual Basic eta SQL bidez lanak automatizatuz."];
-const abt_p3_trad = ["Acostumbrada a trabajar bajo los altos estándares de calidad aplicables a la aviación, he decidido emprender un nuevo camino en el mundo de la programación web.", "Used to working under the high quality standards applicable to aviation, I decided to starts a new path in the world of web programming.", "Abiazioari aplika dakizkiokeen kalitate estandar altuekin lan egiten ohituta, bide berri bati ekitea erabaki dut web programazioaren arloan."];
+const abt_p2_trad = ["Durante los años que dediqué a la gestión del mantenimiento de aeronaves, comencé a interesarme por la programación automatizando tareas con Visual Basic y y SQL.", "During the years I worked in aircraft maintenance management, I became interested in programming in order to automatize tasks with Visual Basic and SQL.", "Hegazkinen mantentze-lanen kudeaketan lan egiten nuela hasi nintzen programatzen, Visual Basic eta SQL bidez lanak automatizatzeko."];
+const abt_p3_trad = ["Acostumbrada a trabajar bajo los altos estándares de calidad aplicables a la aviación, he decidido emprender un nuevo camino en el mundo de la programación web.", "Used to working under the high quality standards applicable to aviation, I decided to start a new path in the world of web programming.", "Abiazioan aplikatzen diren kalitate estandar altuekin lan egiten ohituta, bide berri bati ekitea erabaki dut web programazioaren arloan."];
 const abt_p4_trad = ["Con mi habilidad para abordar desafíos técnicos y mi atención al detalle, estoy lista para aplicar mis conocimientos previos en esta emocionante industria en constante evolución.", "With my ability to address technical challenges and my attention to detail, I'm ready to use my prior knowledge in this exciting, ever-evolving industry.", "Erronka teknikoei ekiteko eta xehetasunei arreta jartzeko daukadan trebeziarekin, prest nago etengabe aldatzen ari den industria zirraragarri honetan nire ezagutzak aplikatzeko."];
 const showMore_trad = ["Ver más", "Show more", "Gehiago ikusi"];
 const showLess_trad = ["Cerrar", "Close", "Itxi"];
