@@ -5,8 +5,7 @@
     box-sizing: border-box;
     font-family: 'Baskervville', serif;
     font-family: 'Assistant', sans-serif;
-
-
+    text-wrap: wrap
 }
 
 :root {
@@ -72,7 +71,9 @@ a {
     width: 100%;
 }
 
-
+html {
+    width: 100%;
+}
 
 body {
     font-family: var(--sans);
@@ -694,6 +695,7 @@ img.bigger {
 
 .contact {
     min-height: 70vh;
+    width: 100%;
 
 }
 
@@ -957,7 +959,7 @@ img.bigger {
     }
 
     header {
-        width: 100%;
+        width: 100vw;
         border-radius: 0;
     }
 
@@ -1014,10 +1016,20 @@ img.bigger {
 
 @media (max-width:660px) {
 
+    .aux_header,
+    .back_header,
+    .front_header {
+        display: flex;
+        padding: 3rem 0.5rem 1rem;
+        align-items: center;
+    }
+
     .front,
     .back {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1.2rem;
+        gap: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
     .front {
@@ -1028,9 +1040,14 @@ img.bigger {
     .aux {
         all: unset;
         display: grid;
-        gap: 2rem;
-        grid-template-areas: 'sIcon1 sIcon2 sIcon3' 'sIcon4 sIcon5 sIcon6' '. sIcon7 .';
+        gap: 1rem;
+        ;
+        grid-template-areas: ' sIcon1 sIcon2 sIcon3' 'sIcon4 sIcon5 sIcon6' '. sIcon7 .';
         grid-template-columns: repeat(3, 1fr);
+        padding-left: 2rem;
+        padding-right: 2rem;
+        align-content: center;
+        justify-items: center;
     }
 
     .pc {
@@ -1068,7 +1085,97 @@ img.bigger {
     .contact p,
     .contact a,
     .contact span {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        text-wrap: wrap;
+    }
+
+    .grid_container {
+        gap: 1.5rem
+    }
+
+    .main_cont {
+        width: 100vw;
+        padding: 7rem 1rem;
+    }
+
+    .skill_container img,
+    .skill_container i {
+        transform: scale(0.8);
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        height: 20px;
+        top: unset;
+        bottom: 18px
+    }
+
+    .carousel-control-prev {
+        left: 5px
+    }
+
+    .carousel-control-next {
+        right: 5px
+    }
+
+    .carousel-inner,
+    .cardSlider {
+        width: 80vw;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon,
+    .carousel-control-next:focus,
+    .carousel-control-next:hover,
+    .carousel-control-prev:focus,
+    .carousel-control-prev:hover {
+        color: #fff;
+    }
+
+    .cardInfo p {
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: ellipsis;
+        word-wrap: break-word
+    }
+}
+
+@media (max-width:560px) {
+
+    .front_header,
+    .back_header,
+    .aux_header {
+        justify-content: center;
+    }
+
+    .skill_container img,
+    .skill_container i {
+        transform: scale(0.7);
+    }
+
+
+
+    .header {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .grid_container {
+        display: grid;
+        grid-template-areas: 'p1' 'mail' 'p2' 'link' 'gh' 'p3' 'cv';
+        gap: 1.5rem;
+        padding: 2rem
+    }
+
+    .contactLine.linkedin,
+    .contactLine.github {
+
+        justify-self: center;
+
+    }
+
+    .cardImage {
+        aspect-ratio: 10/12
     }
 
 
