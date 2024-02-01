@@ -369,7 +369,7 @@ li .lanMobile {
     display: none;
 }
 
-.abt_header .mobile,
+
 .abt_header .sub {
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--contrast1);
@@ -1015,17 +1015,60 @@ img.bigger {
 @media (max-width:660px) {
 
     .front,
-    .back,
-    .aux {
+    .back {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.2rem;
     }
 
-
-    .front,
-    .aux {
+    .front {
         grid-template-rows: repeat(3, 1fr);
 
+    }
+
+    .aux {
+        all: unset;
+        display: grid;
+        gap: 2rem;
+        grid-template-areas: 'sIcon1 sIcon2 sIcon3' 'sIcon4 sIcon5 sIcon6' '. sIcon7 .';
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pc {
+        display: none;
+
+    }
+
+    .mobile {
+        display: block;
+
+    }
+
+    .abt_header .mobile {
+        padding-bottom: 1rem;
+    }
+
+    .abt_header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn_cont {
+        padding: 12px
+    }
+
+    #showMore,
+    #showLess {
+        font-size: 1.5rem;
+    }
+
+    #abt_t {
+        border-bottom: 1px solid var(--contrast2);
+    }
+
+    .contact p,
+    .contact a,
+    .contact span {
+        font-size: 1.5rem;
     }
 
 

@@ -11,6 +11,7 @@ const loadProjects = (lan) => {
 			desc: ["Proyecto final del curso en Codenotch, web de publicación y búsqueda de servicios profesionales por zona. Incluye calendario integrado, gestión de reservas, geolocalización, chat entre usuarios y muchas más funcionalidades.", "Programming course final project in Codenotch, website  publishing and searching  professional services by area. It includes features such as integrated calendar, reservation management, geolocation, and chat between users.", "Programazio kurtsoko amaierako proiektu gisa garatu da HiRun, erabiltzaileek beren inguruan  zerbitzu profesionalak argitaratu eta bilatzeko web orria. Egutegi integratua, erreserben kudeaketa, geolokalizazioa, erabiltzaileen arteko txata eta halako funtzionalitate gehiago ditu."],
 			img: "./img/HiRun.jpg",
 			stack: ["html", "css", "ts", "angular", "node", "sql", "aws", "googleCloud"],
+			link: "https://hi-run.vercel.app/",
 		},
 		{
 			title: ["myBooks", "myBooks", "myBooks"],
@@ -30,6 +31,7 @@ const loadProjects = (lan) => {
 			desc: ["El clásico juego de la infancia ahora en tu PC. Con un estética retro para una experiencia más inmersiva.", "The classic childhood game now in your computer. With a retro aesthetic for a more immersive experience.", "Haurtzaroko jolas klasikoa, orain zure ordenagailuan. Estetika retro batekin, esperientzia mulgilgarriago bat lortzeko."],
 			img: "./img/simon.jpg",
 			stack: ["html", "css", "js"],
+			link: "https://htmlpreview.github.io/?https://github.com/ZuriGE/Maquetacion/blob/main/simon/simon.html",
 		},
 		{
 			title: ["Pokédex", "Pokédex", "Pokédex"],
@@ -158,6 +160,7 @@ $(document).ready(() => {
 	});
 	btn_ES_m.on("click", () => {
 		changeLng(0);
+		$("#burgerNav").trigger("click");
 	});
 
 	btn_EN.on("click", () => {
@@ -165,6 +168,7 @@ $(document).ready(() => {
 	});
 	btn_EN_m.on("click", () => {
 		changeLng(1);
+		$("#burgerNav").trigger("click");
 	});
 
 	btn_EUS.on("click", () => {
@@ -172,6 +176,7 @@ $(document).ready(() => {
 	});
 	btn_EUS_m.on("click", () => {
 		changeLng(2);
+		$("#burgerNav").trigger("click");
 	});
 
 	//menu hamburguesa para móvil
@@ -206,11 +211,11 @@ $(document).ready(() => {
 	});
 
 	//links navBar
-	$("navBar a").click(function () {
-		console.log("normal");
+	$(".navBarList a").click(function () {
+		console.log("hamburguesa");
 		event.preventDefault();
-		let target = $(this).attr("href");
 
+		let target = $(this).attr("href");
 		let offset;
 
 		if ($(this).parent().index() === 0) {
