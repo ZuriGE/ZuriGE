@@ -56,6 +56,13 @@ const loadProjects = (lan) => {
 			.addClass("cardInfo")
 			.append($("<p>").attr("id", `p${i}_desc`).text(project.desc[lan]));
 
+		if (project.link) {
+			let seeIcon = $("<i>").addClass("fa-solid").addClass("fa-up-right-from-square");
+			let linkAnchor = $("<a>").attr("href", project.link).attr("target", "_blank").addClass("projectLink").append(seeIcon);
+			let linkButton = $("<div>").addClass("linkButton").append(linkAnchor);
+			cardImg.append(linkButton);
+		}
+
 		$.each(project.stack, (i, tech) => {
 			let iconClass;
 			let ariaLabel;

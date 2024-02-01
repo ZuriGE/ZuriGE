@@ -527,7 +527,6 @@ p {
 
 
 
-
 .cardImage {
     width: 100%;
     aspect-ratio: 1/1;
@@ -536,7 +535,27 @@ p {
     padding: 1rem 2rem 3rem;
     justify-content: flex-end;
     color: var(--contrast2);
+    position: relative;
 }
+
+.projectLink {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--cardGrad);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.projectLink i {
+    color: #f1f1f1
+}
+
+
 
 .cardInfo {
     color: var(--light);
