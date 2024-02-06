@@ -5,7 +5,8 @@
     box-sizing: border-box;
     font-family: 'Baskervville', serif;
     font-family: 'Assistant', sans-serif;
-    text-wrap: wrap
+    text-wrap: wrap;
+
 }
 
 :root {
@@ -20,6 +21,34 @@
     --serif: 'Baskervville', serif;
     --sans: 'Assistant', sans-serif;
     --cardGrad: #242424;
+}
+
+
+body::-webkit-scrollbar {
+    width: 8px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--contrast1);
+    /* color of the scroll thumb */
+    /* border-radius: 20px; */
+    /* roundness of the scroll thumb */
+    /* border: 3px solid var(--contrast1); */
+    /* creates padding around scroll thumb */
+}
+
+body {
+    /*esto para firegox creo*/
+    scrollbar-width: thin;
+    /* "auto" or "thin" */
+    scrollbar-color: var(--contrast1)
+        /* scroll thumb and track */
 }
 
 section {
