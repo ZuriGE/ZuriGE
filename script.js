@@ -39,6 +39,17 @@ const loadProjects = (lan) => {
 			img: "./img/pokeapi.jpg",
 			stack: ["html", "css", "js", "node"],
 		},
+		{
+			title: ["Pic Pick", "Pic Pick", "Pic Pick"],
+			desc: [
+				"Extrae los colores de tus imágenes preferidas en dos sencillos pasos. 'Pic Pick' te permite obtener una paleta de colores basada en la imagen que selecciones. Esta herramienta se fundamenta en el método de agrupamiento K-medias y el cálculo de distancia euclídea entre puntos, tratando las coordenadas RGB de cada píxel como si se tratase de coordenadas cartesianas.",
+				"Pick the colours from your favourite pics. 'Pic Pick' allows you to get a colour palette inspired on the image you select. This tool is based on the K-means clustering method and the calculation of Euclidean distance between points, treating the RGB coordinates of each pixel as Cartesian coordinates.",
+				"Zure argazki gogokoen koloreak atera bi urrats errazetan. 'Pic Pick'ek hautatutako irudian oinarritutako kolore-paleta bat egiteko aukera ematen dizu. Tresna hau K-media multzokatze-metodoan eta puntuen arteko distantzia euklideoaren kalkuluan oinarritzen da, pixel bakoitzaren RGB koordenatuak koordenatu cartesiarrak balira tratatuta.",
+			],
+			img: "./img/color_picker.jpg",
+			stack: ["html", "css", "js"],
+			link: "https://zurige.github.io/pic-pick/",
+		},
 	];
 
 	$.each(projectArray, (i, project) => {
