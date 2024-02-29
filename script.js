@@ -14,6 +14,24 @@ const loadProjects = (lan) => {
 			link: "https://hi-run.vercel.app/",
 		},
 		{
+			title: ["Pic Pick", "Pic Pick", "Pic Pick"],
+			desc: [
+				"Extrae los colores de tus imágenes preferidas en dos sencillos pasos. 'Pic Pick' te permite obtener una paleta de colores basada en la imagen que selecciones. Esta herramienta se fundamenta en el método de agrupamiento K-medias y el cálculo de distancia euclídea entre puntos, tratando las coordenadas RGB de cada píxel como si se tratase de coordenadas cartesianas.",
+				"Pick the colours from your favourite pics. 'Pic Pick' allows you to get a colour palette inspired on the image you select. This tool is based on the K-means clustering method and the calculation of Euclidean distance between points, treating the RGB coordinates of each pixel as Cartesian coordinates.",
+				"Zure argazki gogokoen koloreak atera bi urrats errazetan. 'Pic Pick'ek hautatutako irudian oinarritutako kolore-paleta bat egiteko aukera ematen dizu. Tresna hau K-media multzokatze-metodoan eta puntuen arteko distantzia euklideoaren kalkuluan oinarritzen da, pixel bakoitzaren RGB koordenatuak koordenatu cartesiarrak balira tratatuta.",
+			],
+			img: "./img/color_picker.jpg",
+			stack: ["html", "css", "js"],
+			link: "https://zurige.github.io/pic-pick/",
+		},
+		{
+			title: ["Simón dice", "Simon Says", "Tximunek dio"],
+			desc: ["El clásico juego de la infancia ahora en tu PC. Con un estética retro para una experiencia más inmersiva.", "The classic children's game now in your computer. With a retro aesthetic for a more immersive experience.", "Haurtzaroko jolas klasikoa, orain zure ordenagailuan. Estetika retro batekin, esperientzia mulgilgarriago bat lortzeko."],
+			img: "./img/simon.jpg",
+			stack: ["html", "css", "js"],
+			link: "https://htmlpreview.github.io/?https://github.com/ZuriGE/Maquetacion/blob/main/simon/simon.html",
+		},
+		{
 			title: ["myBooks", "myBooks", "myBooks"],
 			desc: ["Página de compraventa de libros. Desarrollada para practicar la implementación de una base de datos local en una aplicación de angular.", "Book buying and selling page. Developed to practice implementing a local database in an Angular application.", "Liburuak salerosteko orria. Angular aplikazio batean datu-base lokal baten ezarpetan ikasteko garatua."],
 			img: "./img/myBooks.jpg",
@@ -26,29 +44,12 @@ const loadProjects = (lan) => {
 			img: "./img/3enraya.jpg",
 			stack: ["html", "css", "js"],
 		},
-		{
-			title: ["Simón dice", "Simon Says", "Tximunek dio"],
-			desc: ["El clásico juego de la infancia ahora en tu PC. Con un estética retro para una experiencia más inmersiva.", "The classic children's game now in your computer. With a retro aesthetic for a more immersive experience.", "Haurtzaroko jolas klasikoa, orain zure ordenagailuan. Estetika retro batekin, esperientzia mulgilgarriago bat lortzeko."],
-			img: "./img/simon.jpg",
-			stack: ["html", "css", "js"],
-			link: "https://htmlpreview.github.io/?https://github.com/ZuriGE/Maquetacion/blob/main/simon/simon.html",
-		},
+
 		{
 			title: ["Pokédex", "Pokédex", "Pokédex"],
 			desc: ["Desarrollada como ejercicio para llamar a una API externa y mostrar los resultados en un front maquetado de acuerdo a la temática pokemon", "Developed as an exercise to call an external API and show the results in a front layout related to the pokemon theme", "Ariketa gisa garatu da, kanpoko API bati deitzeko eta emaitzak gaiaren arabera maketatutako front batean erakusteko"],
 			img: "./img/pokeapi.jpg",
 			stack: ["html", "css", "js", "node"],
-		},
-		{
-			title: ["Pic Pick", "Pic Pick", "Pic Pick"],
-			desc: [
-				"Extrae los colores de tus imágenes preferidas en dos sencillos pasos. 'Pic Pick' te permite obtener una paleta de colores basada en la imagen que selecciones. Esta herramienta se fundamenta en el método de agrupamiento K-medias y el cálculo de distancia euclídea entre puntos, tratando las coordenadas RGB de cada píxel como si se tratase de coordenadas cartesianas.",
-				"Pick the colours from your favourite pics. 'Pic Pick' allows you to get a colour palette inspired on the image you select. This tool is based on the K-means clustering method and the calculation of Euclidean distance between points, treating the RGB coordinates of each pixel as Cartesian coordinates.",
-				"Zure argazki gogokoen koloreak atera bi urrats errazetan. 'Pic Pick'ek hautatutako irudian oinarritutako kolore-paleta bat egiteko aukera ematen dizu. Tresna hau K-media multzokatze-metodoan eta puntuen arteko distantzia euklideoaren kalkuluan oinarritzen da, pixel bakoitzaren RGB koordenatuak koordenatu cartesiarrak balira tratatuta.",
-			],
-			img: "./img/color_picker.jpg",
-			stack: ["html", "css", "js"],
-			link: "https://zurige.github.io/pic-pick/",
 		},
 	];
 
