@@ -29,7 +29,7 @@ const loadProjects = (lan) => {
 			desc: ["El clásico juego de la infancia ahora en tu PC. Con un estética retro para una experiencia más inmersiva.", "The classic children's game now in your computer. With a retro aesthetic for a more immersive experience.", "Haurtzaroko jolas klasikoa, orain zure ordenagailuan. Estetika retro batekin, esperientzia mulgilgarriago bat lortzeko."],
 			img: "./img/simon.jpg",
 			stack: ["html", "css", "js"],
-			link: "https://htmlpreview.github.io/?https://github.com/ZuriGE/Maquetacion/blob/main/simon/simon.html",
+			link: "https://zurige.github.io/simon/",
 		},
 		{
 			title: ["myBooks", "myBooks", "myBooks"],
